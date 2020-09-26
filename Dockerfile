@@ -30,4 +30,4 @@ RUN bash setup.sh \
 	&& wget -q https://github.com/P3TERX/aria2.conf/raw/master/dht.dat \
 	&& wget -q https://github.com/P3TERX/aria2.conf/raw/master/dht6.dat
 
-CMD ["bash","bot.sh"]
+CMD ["bash","start.sh"]
