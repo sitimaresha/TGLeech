@@ -97,7 +97,7 @@ class CloneHelper:
             )
             
             g_a_u = [
-                'rclone',
+                '/app/rclone-v1.53.0-linux-amd64/rclone',
                 'lsf',
                 '--config=./rclone.conf',
                 '-F',
@@ -151,7 +151,7 @@ class CloneHelper:
                 parse_mode="html"
             )
             g_cmd = [
-                'rclone',
+                '/app/rclone-v1.53.0-linux-amd64/rclone',
                 'size',
                 '--config=rclone.conf',
                 f'DRIVE:{destination}/{self.name}'
