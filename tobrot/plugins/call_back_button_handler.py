@@ -53,7 +53,7 @@ async def button(bot, update: CallbackQuery):
                     await update.message.delete()
         elif cb_data == "fuckingdo":
             if update.from_user.id in AUTH_CHANNEL:
-                g_d_list = ['app.json', 'venv', 'rclone.conf', '.gitignore', '_config.yml', 'Dockerfile', 'DOWNLOADS', 'rclone.jpg', 'README.md', 'requirements.txt', 'runtime.txt', 'bot.sh', 'tobrot', 'Torrentleech-Gdrive.txt', 'setup.sh', 'aria2c', 'rclone-v1.53.0-linux-amd64', 'aria2c.conf', 'dht.dat', 'dht.dat', 'dht6.dat']
+                g_d_list = ['app.json', 'venv', 'rclone.conf', '.gitignore', '_config.yml', 'Dockerfile', 'DOWNLOADS', 'rclone.jpg', 'README.md', 'requirements.txt', 'runtime.txt', 'bot.sh', 'tobrot', 'Torrentleech-Gdrive.txt', 'setup.sh', 'aria2c', 'rclone-v1.53.0-linux-amd64', 'heroku.yml', 'aria2c.conf', 'dht.dat', 'dht.dat', 'dht6.dat']
                 LOGGER.info(g_d_list)
                 g_list = os.listdir()
                 LOGGER.info(g_list)
