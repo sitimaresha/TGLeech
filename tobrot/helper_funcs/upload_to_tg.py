@@ -144,7 +144,7 @@ async def upload_to_gdrive(file_upload, message, messa_ge, g_id):
         fole.write(f"{RCLONE_CONFIG}")
     destination = f'{DESTINATION_FOLDER}'
     if os.path.isfile(file_upload):
-        g_au = ['rclone', 'copy', '--config=/app/rclone.conf', f'/app/{file_upload}', 'DRIVE:'f'{destination}', '-v']
+        g_au = ['/app/rclone-v1.53.0-linux-amd64/rclone', 'copy', '--config=/app/rclone.conf', f'/app/{file_upload}', 'DRIVE:'f'{destination}', '-v']
         tmp = await asyncio.create_subprocess_exec(*g_au, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE)
         pro, cess = await tmp.communicate()
         LOGGER.info(pro.decode('utf-8'))
@@ -154,7 +154,7 @@ async def upload_to_gdrive(file_upload, message, messa_ge, g_id):
         with open('filter.txt', 'w+', encoding = 'utf-8') as filter:
             print(f"+ {gk_file}\n- *", file=filter)
             
-        t_a_m = ['rclone', 'lsf', '--config=/app/rclone.conf', '-F', 'i', "--filter-from=/app/filter.txt", "--files-only", 'DRIVE:'f'{destination}']
+        t_a_m = ['/app/rclone-v1.53.0-linux-amd64/rclone', 'lsf', '--config=/app/rclone.conf', '-F', 'i', "--filter-from=/app/filter.txt", "--files-only", 'DRIVE:'f'{destination}']
         gau_tam = await asyncio.create_subprocess_exec(*t_a_m, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE)
         #os.remove("filter.txt")
         gau, tam = await gau_tam.communicate()
@@ -186,7 +186,7 @@ async def upload_to_gdrive(file_upload, message, messa_ge, g_id):
     else:
         tt= os.path.join(destination, file_upload)
         LOGGER.info(tt)
-        t_am = ['rclone', 'copy', '--config=/app/rclone.conf', f'/app/{file_upload}', 'DRIVE:'f'{tt}', '-v']
+        t_am = ['/app/rclone-v1.53.0-linux-amd64/rclone', 'copy', '--config=/app/rclone.conf', f'/app/{file_upload}', 'DRIVE:'f'{tt}', '-v']
         tmp = await asyncio.create_subprocess_exec(*t_am, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE)
         pro, cess = await tmp.communicate()
         LOGGER.info(pro.decode('utf-8'))
@@ -196,7 +196,7 @@ async def upload_to_gdrive(file_upload, message, messa_ge, g_id):
         with open('filter1.txt', 'w+', encoding = 'utf-8') as filter1:
             print(f"+ {g_file}/\n- *", file=filter1)
             
-        g_a_u = ['rclone', 'lsf', '--config=/app/rclone.conf', '-F', 'i', "--filter-from=/app/filter1.txt", "--dirs-only", 'DRIVE:'f'{destination}']
+        g_a_u = ['/app/rclone-v1.53.0-linux-amd64/rclone', 'lsf', '--config=/app/rclone.conf', '-F', 'i', "--filter-from=/app/filter1.txt", "--dirs-only", 'DRIVE:'f'{destination}']
         gau_tam = await asyncio.create_subprocess_exec(*g_a_u, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE)
         #os.remove("filter1.txt")
         gau, tam = await gau_tam.communicate()
