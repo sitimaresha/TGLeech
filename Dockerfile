@@ -25,8 +25,8 @@ RUN apt -qq update \
 	&& apt autoremove -y \
 	&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN cd /app \
-	&& export PATH=$PWD:$PATH
+RUN bash setup.sh \
+	&& cd /app \
 	&& wget -q https://github.com/P3TERX/aria2.conf/raw/master/dht.dat \
 	&& wget -q https://github.com/P3TERX/aria2.conf/raw/master/dht6.dat
 
