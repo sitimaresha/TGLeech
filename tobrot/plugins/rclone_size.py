@@ -26,7 +26,7 @@ async def check_size_g(client, message):
             fole.write("[DRIVE]\n")
             fole.write(f"{RCLONE_CONFIG}")
     destination = f'{DESTINATION_FOLDER}'
-    gau_tam = subprocess.Popen(['rclone', 'size', '--config=./rclone.conf', 'DRIVE:'f'{destination}'], stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+    gau_tam = subprocess.Popen(['/app/rclone-v1.53.0-linux-amd64/rclone', 'size', '--config=./rclone.conf', 'DRIVE:'f'{destination}'], stdout = subprocess.PIPE, stderr = subprocess.PIPE)
     gau, tam = gau_tam.communicate()
     print(gau)
     print(tam)
