@@ -1,8 +1,8 @@
+Pillow
 aiohttp
 aria2p
+hurry.filesize
 hachoir
-Pillow
 pyrogram
 tgcrypto
 youtube-dl
-hurry.filesize
